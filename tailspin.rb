@@ -5,23 +5,23 @@
 class Tailspin < Formula
   desc "A better way to browse your logfiles"
   homepage "https://github.com/bensadeh/tailspin/"
-  version "0.1"
+  version "0.1.1"
   license "MIT"
 
   depends_on "less"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/bensadeh/tailspin/releases/download/0.1/tailspin_0.1_macOS_arm64.tar.gz"
-      sha256 "84a4663688ead27864d4140cf52d471a5d927812fb16d77eca019014da024f6e"
+    if Hardware::CPU.intel?
+      url "https://github.com/bensadeh/tailspin/releases/download/0.1.1/tailspin_0.1.1_macOS_64-bit.tar.gz"
+      sha256 "9f2fbcd9eabf99e36751df71113fddc6e981c40b30038c651ef6c214d7c7730e"
 
       def install
         bin.install "tailspin" => "spin"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/bensadeh/tailspin/releases/download/0.1/tailspin_0.1_macOS_64-bit.tar.gz"
-      sha256 "d112259b3b39230d898fec02604f8ce61c6b9fcb7e65a02e936cb7f16256d69b"
+    if Hardware::CPU.arm?
+      url "https://github.com/bensadeh/tailspin/releases/download/0.1.1/tailspin_0.1.1_macOS_arm64.tar.gz"
+      sha256 "de44474cfa7e1e217194697eed751ba562e033dc5c16534769c8d882d7c21437"
 
       def install
         bin.install "tailspin" => "spin"
@@ -31,16 +31,16 @@ class Tailspin < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/bensadeh/tailspin/releases/download/0.1/tailspin_0.1_Linux_64-bit.tar.gz"
-      sha256 "e0673166dc02e5a3ec15f892c52007837f4587ac59287d00f05a084d490c602c"
+      url "https://github.com/bensadeh/tailspin/releases/download/0.1.1/tailspin_0.1.1_Linux_64-bit.tar.gz"
+      sha256 "990c8170367be2901fc96b1d2866c8ce8db86558744614799038e3d7774972bf"
 
       def install
         bin.install "tailspin" => "spin"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bensadeh/tailspin/releases/download/0.1/tailspin_0.1_Linux_arm64.tar.gz"
-      sha256 "8c561153962681e9bffe4272c21477feecb06d87df1c3bf25b91addea060c944"
+      url "https://github.com/bensadeh/tailspin/releases/download/0.1.1/tailspin_0.1.1_Linux_arm64.tar.gz"
+      sha256 "651202913e3039da068861f850a6a76824c65e6191910910cdb3e6c1fe8ca1fa"
 
       def install
         bin.install "tailspin" => "spin"
